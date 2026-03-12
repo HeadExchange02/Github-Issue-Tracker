@@ -1,4 +1,4 @@
-document.getElementById("login-btn").addEventListener("click", () => {
+document.getElementById("signin-btn").addEventListener("click", () => {
 
     // 1 get username
     const usernameInput = document.getElementById("input-username");
@@ -9,7 +9,7 @@ document.getElementById("login-btn").addEventListener("click", () => {
     // 3 match username & password
     if (username == "admin" && password == "admin123"){
         // 3-1 true ::> alert > homepage
-        alert("Login Successful");
+        alert("SignIn Successful");
 
         window.location.assign("/home.html");
     }
