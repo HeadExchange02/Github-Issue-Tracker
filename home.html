@@ -1,13 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Github Issue Tracker | Home</title>
 
     <link rel="shortcut icon" href="Assets/github-logo.png" type="image/x-icon">
+
+    <!-- Tailwind + Daisy UI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body>
-    <h1>Home</h1>
+    <header class="w-11/12 mx-auto">
+        <div>
+            <div class="navbar bg-base-100 shadow-sm">
+                <div class="flex flex-1 items-center gap-1">
+                    <img src="Assets/github-logo.png" class="max-h-5 max-w-5" alt="">
+                    <h3 class="font-semibold text-xl">Github Issue Tracker</h3>
+                </div>
+                <div class="flex gap-2">
+                    <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+                    <button id="add-issue-btn" class="btn btn-primary">+ Add Issue</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="w-11/12 mx-auto">
+        <div id="issues-btn" class="shadow-xl p-3 mt-4">
+            <button id="tab-all" class="btn btn-outline btn-primary min-w-32" onclick="allIssues()">All</button>
+            <button id="tab-open" class="btn btn-outline btn-primary min-w-32" onclick="openIssues()">Open</button>
+            <button id="tab-closed" class="btn btn-outline btn-primary min-w-32"
+                onclick="closedIssues()">Closed</button>
+        </div>
+
+        <div
+            class="bg-[#F6F8FA] border border-gray-300 rounded-t-lg p-4 flex justify-between items-center text-sm font-bold shadow-sm">
+            <div class="flex items-center gap-2">
+                <img class="bg-purple-200 p-1.5 rounded-full" src="Assets/Aperture.png" alt="">
+                <h3 id="issue-total">0 Issues Found</h3>
+            </div>
+
+            <div class="flex gap-6">
+                <span class="text-green-600">🟢 Open: <span id="open-count">0</span></span>
+                <span class="text-purple-600">🟣 Closed: <span id="closed-count">0</span></span>
+            </div>
+        </div>
+
+        <div id="issues-container">
+            <h2>OK</h2>
+            <div class="card bg-base-100 w-96 shadow-sm">
+                <div class="flex justify-between p-5">
+                    <img src="Assets/Open-Status.png" alt="">
+                    <p class="bg-[#ef444448] px-2 py-1 rounded-2xl">High</p>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">
+                        Fix navigation menu on mobile devices
+                        <div class="badge badge-secondary">NEW</div>
+                    </h2>
+                    <p>The navigation menu doesn't collapse properly on mobile devices...</p>
+                    <div class="card-actions justify-end">
+                        <div class="badge badge-outline">Fashion</div>
+                        <div class="badge badge-outline">Products</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="Scripts/script.js"></script>
 </body>
+
 </html>
