@@ -33,12 +33,10 @@
         <div id="issues-btn" class="shadow-xl p-3 mt-4">
             <button id="tab-all" class="btn btn-outline btn-primary min-w-32" onclick="allIssues()">All</button>
             <button id="tab-open" class="btn btn-outline btn-primary min-w-32" onclick="openIssues()">Open</button>
-            <button id="tab-closed" class="btn btn-outline btn-primary min-w-32"
-                onclick="closedIssues()">Closed</button>
+            <button id="tab-closed" class="btn btn-outline btn-primary min-w-32" onclick="closedIssues()">Closed</button>
         </div>
 
-        <div
-            class="bg-[#F6F8FA] border border-gray-300 rounded-t-lg p-4 flex justify-between items-center text-sm font-bold shadow-sm">
+        <div class="bg-[#F6F8FA] border border-gray-300 rounded-t-lg p-4 flex items-center text-sm font-bold shadow-sm">
             <div class="flex items-center gap-2">
                 <img class="bg-purple-200 p-1.5 rounded-full" src="Assets/Aperture.png" alt="">
                 <h3 id="issue-total">0 Issues Found</h3>
@@ -50,22 +48,26 @@
             </div>
         </div>
 
-        <div id="issues-container">
-            <h2>OK</h2>
-            <div class="card bg-base-100 w-96 shadow-sm">
+        <div id="issues-container" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 space-y-4">
+            <div class="card bg-base-100 w-120 shadow-sm">
                 <div class="flex justify-between p-5">
                     <img src="Assets/Open-Status.png" alt="">
-                    <p class="bg-[#ef444448] px-2 py-1 rounded-2xl">High</p>
+                    <p class="text-red-500 font-semibold bg-[#ef444448] px-2 py-1 rounded-2xl">High</p>
                 </div>
+
                 <div class="card-body">
                     <h2 class="card-title">
                         Fix navigation menu on mobile devices
-                        <div class="badge badge-secondary">NEW</div>
                     </h2>
                     <p>The navigation menu doesn't collapse properly on mobile devices...</p>
-                    <div class="card-actions justify-end">
-                        <div class="badge badge-outline">Fashion</div>
-                        <div class="badge badge-outline">Products</div>
+                    <div class="flex gap-2">
+                        <h3 class="text-red-500 font-semibold bg-[#ef444448] px-2 py-1 rounded-2xl">BUG</h3>
+                        <h3 class="text-yellow-500 font-semibold bg-[#fde68aa2] px-2 py-1 rounded-2xl">HELP WANTED</h3>
+                    </div>
+
+                    <div class="border-2 border-gray-400 p-4 rounded-xl">
+                        <p>#1 by john_doe</p>
+                        <p>1/15/2024</p>
                     </div>
                 </div>
             </div>
