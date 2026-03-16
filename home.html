@@ -30,16 +30,16 @@
     </header>
 
     <section class="w-11/12 mx-auto">
-        <div id="issues-btn" class="shadow-xl p-3 mt-4">
-            <button id="tab-all" class="btn btn-outline btn-primary min-w-32" onclick="allIssues()">All</button>
-            <button id="tab-open" class="btn btn-outline btn-primary min-w-32" onclick="openIssues()">Open</button>
-            <button id="tab-closed" class="btn btn-outline btn-primary min-w-32" onclick="closedIssues()">Closed</button>
+        <div id="tab-btn" class="shadow-xl p-3 mt-4">
+            <button id="tab-all" class="btn btn-outline btn-primary min-w-32" onclick="changeTab()">All</button>
+            <button id="tab-open" class="btn btn-outline btn-primary min-w-32" onclick="changeTab()">Open</button>
+            <button id="tab-closed" class="btn btn-outline btn-primary min-w-32" onclick="changeTab()">Closed</button>
         </div>
 
         <div class="bg-[#F6F8FA] border border-gray-300 rounded-t-lg p-4 flex items-center text-sm font-bold shadow-sm">
             <div class="flex items-center gap-2">
                 <img class="bg-purple-200 p-1.5 rounded-full" src="Assets/Aperture.png" alt="">
-                <h3 id="issue-total">0 Issues Found</h3>
+                <h3 id="issue-total" class="text-center">0 Issues Found</h3>
             </div>
 
             <div class="flex gap-6">
