@@ -1,6 +1,8 @@
-console.log("ok")
+const tabActive = ['bg-navy', 'border-navy', 'text-white']
+const tabInactive = ['bg-transparent', 'text-slate-700', 'border-slate-200', 'text-black']
 
 let allData = [];
+let currentTab = 'all';
 
 async function allIssuesData() {
     try {
@@ -68,18 +70,36 @@ function renderData(dataList) {
     })
 }
 
-function changeTab(type, btn) {
-    const tabButtons = document.querySelectorAll('#tab-btn button');
-    console.log(tabButtons);
-    tabButtons.forEach(button => {
-        button.classList.remove('bg-gray-200', 'font-bold', 'border-gray-300')
-        button.classList.add('btn-ghost', 'text-gray-500', 'border-none')
-    })
-    btn.classList.add('bg-gray-200', 'font-bold', 'border-gray-300');
-    btn.classList.remove('btn-ghost', 'text-gray-500', 'border-none');
+function changeTab(type, btn, tab) {
+    const tabs = ['all', 'open', 'closed'];
+    currentTab = tab;
 
-    if (type === 'all') renderData(allData);
-    else renderData(allData.filter(i => i.status === type));
+    for (const t of tabs) {
+        const tabName = document.getElementById('tab-' + t);
+        console.log(tabName);
+
+        if (t === tab) {
+            tabName.classList.remove(...tabInactive);
+            tabName.classList.add(...tabActive);
+        }
+        else{
+            tabName.classList.remove(...tabActive);
+            tabName.classList.add(...tabInactive);
+        }
+    }
+
+    //     const tabButtons = document.querySelectorAll('#tab-btn button');
+    //     console.log(tabButtons);
+
+    //     tabButtons.forEach(button => {
+    //         button.classList.add('btn-ghost', 'text-gray-500', 'border-none')
+    //         button.classList.remove('bg-gray-200', 'font-bold', 'border-gray-300')
+    //     })
+    //     btn.classList.remove('btn-ghost', 'text-gray-500', 'border-none');
+    //     btn.classList.add('bg-gray-200', 'font-bold', 'border-gray-300');
+
+    //         if (type === 'all') renderData(allData);
+    //     else renderData(allData.filter(i => i.status === type));
 }
 
 
